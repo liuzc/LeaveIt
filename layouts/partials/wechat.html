@@ -1,0 +1,46 @@
+{{ $cdn_url := .Scratch.Get "cdn_url" }}
+{{ with .Site.Params.Social.Wechat}}
+{{ $wechat := .}}
+<style type="text/css">
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .8);
+}
+
+.center {
+    width: 220px;
+    height: 220px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -150px 0 0 -110px;
+}
+
+.center img {
+    width: 220px;
+}
+
+.center i {
+    color: #fff;
+    font-size: 1.5em;
+    position: relative;
+    float: right;
+    top: 0px;
+    right: -20px;
+    cursor: pointer;
+}
+</style>
+<!-- LIGHTBOX CODE BEGIN -->
+
+<div id="lightbox" style="display: none" class="lightbox" onclick="document.getElementById('lightbox').style.display='none';">
+    <div class="center">
+        <i class="iconfont icon-close"></i>
+        <img src="{{ printf "%s%s" $cdn_url $wechat}}">
+    </div>
+</div>
+<!-- LIGHTBOX CODE END -->
+{{ end }}

@@ -1,0 +1,5 @@
+  {{ $style := resources.Get "css/main.scss" | resources.ToCSS | resources.Minify}}
+
+  <link rel="stylesheet" href="{{ "/font/iconfont.css" | absURL}}">
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+

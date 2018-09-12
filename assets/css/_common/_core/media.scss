@@ -1,0 +1,27 @@
+@media (max-width: 767px) {
+
+    .archive-item-date{
+      display: none;
+    }
+    .footer {
+      height: 3rem;
+      width: 100%;
+      text-align: center;
+      line-height: 1.5rem;
+    }
+
+    #dynamic-to-top{
+        bottom: 3em;
+        right: 4em;
+    }
+
+    .post-warp {
+       .categories-card {
+         .card-item {
+          width: 95%;
+         }
+       }
+    }
+}
+
+
