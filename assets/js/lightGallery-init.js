@@ -36,6 +36,7 @@
 			}, 30);
          }    
         
+         var index = items.length;
          items.push(item);
         // console.log(item)
 
@@ -45,7 +46,8 @@
                  dynamic: true,
                  download: false,
                  showThumbByDefault: false,
-                 dynamicEl: items
+                 dynamicEl: items,
+                 index: index
              })
          });
      });
