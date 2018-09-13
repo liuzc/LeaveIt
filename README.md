@@ -1,7 +1,6 @@
 LeaveIt Hugo Theme
 ========================
-LeaveIt Hugo Theme
-========================
+
 LeaveIt is a clean, elegant, simple but not simpler blog theme for Hugo. 
 
 ![hugo-theme-LeaveIt](https://raw.githubusercontent.com/liuzc/LeaveIt/master/images/screenshot.png)
@@ -33,14 +32,14 @@ Next, open config.toml in the base of the Hugo site and ensure the theme option 
 ```bash
 theme = "LeaveIt"
 ```
-For more information read the official setup guide of Hugo.
+For more information read the [official setup guide](https://gohugo.io/documentation/) of Hugo.
 
 # Site Configuration
 Take a look in the `exampleSite` folder.
 
 This directory contains an example config file and the content for the demo. It serves as an example setup for your documentation.
 
-Copy the config.toml in the root directory of your website. Overwrite the existing config file if necessary.
+Copy the `config.toml` in the root directory of your website. Overwrite the existing config file if necessary.
 
 # Content Suggestions
 
