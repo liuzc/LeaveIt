@@ -11,3 +11,20 @@
         </div>
     </div>
 </nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <a href="{{ "/" | absURL}}">LiuZhichao</a>
+            <button class="menu-toggle">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                {{ $currentPage := . }}
+                {{ range .Site.Menus.main }}
+                <a class="menu-item{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+                {{ end }}
+        </div>
+    </div>
+</nav>

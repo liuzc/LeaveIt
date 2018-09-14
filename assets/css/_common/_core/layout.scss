@@ -16,9 +16,10 @@
       max-width: 1200px;
       text-align: center;
       margin: 0 auto;
+      display: flex;
+      justify-content: space-between; 
     }
   }
-
   
   .main {
     flex: 1 0 auto;
@@ -33,6 +34,7 @@
     width: 100%;
     text-align: center;
     line-height: 4rem;
+    padding-top: 2em;
   }
   
   

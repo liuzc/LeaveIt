@@ -29,6 +29,16 @@ _Blog.toggleTheme = function() {
     })
 }
 
+_Blog.toggleMobileMenu = function(){
+    const menuToggle = document.querySelector('.menu-toggle')
+    const mobileMenu = document.querySelector('#mobile-menu')
+    menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('active')
+        menuToggle.classList.toggle('active')
+    })
+}
+
 _Blog.toggleTheme()
 _Blog.changeTitle()
+_Blog.toggleMobileMenu()
 }());
