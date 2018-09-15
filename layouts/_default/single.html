@@ -83,6 +83,19 @@
         </section>
     </div>
     {{ end }}
+
+
+    <div class="post-comment">
+        {{ if ne .Site.DisqusShortname "" }}
+            {{ if ( .Params.showComments | default true ) }}
+             {{ template "_internal/disqus.html" . }}
+            {{ end }}
+        {{ else }}
+
+        {{ end }}
+    </div>
+
+
     <div class="post-nav">
         {{ if .PrevInSection }}
         <a href="{{.PrevInSection.Permalink}}" class="prev" rel="prev" title="{{ .PrevInSection.Title}}"><i class="iconfont icon-left"></i>&nbsp;{{ .PrevInSection.Title}}</a>
