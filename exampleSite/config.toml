@@ -1,6 +1,6 @@
-baseURL = "https://liuzhichao.com/"
-languageCode = "zh-CN"
-title = "柳志超博客"
+baseURL = "https://example.com"
+languageCode = "en-us"
+title = "LeaveIt"
 theme = "LeaveIt"
 
 paginate = 12
@@ -41,15 +41,15 @@ preserveTaxonomyNames = true
 
 [params]
     since = 2011
-    author = "柳志超"                           # Author's name
-    avatar = "/images/me/avatar.jpg"           # Author's avatar
+    author = "Covey.Liu"                           # Author's name
+    avatar = "/images/me/avatar.jpeg"           # Author's avatar
     subtitle = "我会更好，因为我没有停止"         # Subtitle
     cdn_url = ""           # Base CDN URL
 
     google_verification = ""
    
-    description = "柳志超个人博客" # site description
-    keywords = "柳志超,柳志超博客" # site keywords
+    description = "" # site description
+    keywords = "" # site keywords
 
     beian = ""
     baiduAnalytics = ""
@@ -61,7 +61,7 @@ preserveTaxonomyNames = true
     Twitter = "xxoo"
     Email   = "xxoo"
     Instagram = "xxoo"
-    Wechat = "/images/me/wechat.jpeg"  # Wechat QRcode image
+    Wechat = "/images/me/wechat.png"  # Wechat QRcode image
     Facebook = "xxoo"
     Telegram = "xxoo"
     Dribbble = "xxoo"
