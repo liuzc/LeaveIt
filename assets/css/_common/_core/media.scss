@@ -14,17 +14,20 @@
             margin: 0;
             height: 5em;
             line-height: 5.5em;
-            background: #ffffff;
+            background: $light-background-color;
+
             .navbar-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
                 width: 100%;
                 padding-right: 1em;
                 padding-left: 1em;
                 box-sizing: border-box;
-                .menu-toggle {
 
-                    float: right;
+        
+                .menu-toggle {
                     cursor: pointer;
-                    height: 5em;
                     line-height: 5.5em;
 
                     span {
@@ -38,6 +41,10 @@
                         -webkit-transition: .25s margin .25s, .25s transform;
                         -moz-transition: .25s margin .25s, .25s transform;
                         transition: .25s margin .25s, .25s transform;
+
+                        .dark-theme & {
+                            background: $dark-font-color;
+                        }
                     }
 
                     span:nth-child(1) {
@@ -90,6 +97,14 @@
                 &.active {
                     display: block;
                 }
+
+                .dark-theme & {
+                    background: $dark-background-color;
+                    border-top: 2px solid $dark-font-secondary-color;
+                }
+            }
+            .dark-theme & {
+                background: $dark-background-color !important;
             }
         }
     }

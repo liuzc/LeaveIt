@@ -1,44 +1,56 @@
-(function(){
-'use strict';
-var _Blog = window._Blog || {};
+jQuery(function($) {
 
-_Blog.changeTitle = function() {
+    'use strict';
 
-    var currentTitle = document.title;
-    window.onblur = function() {
-        document.title = 'I miss you!（＞﹏＜）';
+    var _Blog = window._Blog || {};
+
+    _Blog.prettify = function() {
+        $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+        window.prettyPrint && prettyPrint();
+    };
+
+    _Blog.externalUrl = function() {
+        $.expr[':'].external = function(obj) {
+            return !obj.href.match(/^mailto\:/) &&
+                (obj.hostname != location.hostname);
+        };
+        $('a:external').addClass('external');
+        $(".external").attr('target', '_blank');
+
     }
-    window.onfocus = function() {
-        document.title = currentTitle;
+
+    _Blog.changeTitle = function() {
+        var currentTitle = document.title;
+        window.onblur = function() {
+            document.title = 'I miss you!（＞﹏＜）';
+        }
+        window.onfocus = function() {
+            document.title = currentTitle;
+        }
+    };
+
+    _Blog.toggleTheme = function() {
+        const currentTheme = window.localStorage && window.localStorage.getItem('theme')
+        const isDark = currentTheme === 'dark'
+        $('body').toggleClass('dark-theme', isDark)
+        $('.theme-switch').on('click', () => {
+            $('body').toggleClass('dark-theme')
+            window.localStorage &&
+                window.localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light', )
+        })
     }
-};
 
-_Blog.toggleTheme = function() {
-    const currentTheme = window.localStorage && window.localStorage.getItem('theme')
-    const themeSwitchEL = document.querySelector('.theme-switch')
-    const isDark = currentTheme === 'dark'
-    document.body.classList.toggle('dark-theme', isDark)
+    _Blog.toggleMobileMenu = function() {
+        $('.menu-toggle').on('click', () => {
+            $('.menu-toggle').toggleClass('active')
+            $('#mobile-menu').toggleClass('active')
+        })
+    }
 
-    themeSwitchEL.addEventListener('click', () => {
-        document.body.classList.toggle('dark-theme')
-        window.localStorage &&
-            window.localStorage.setItem(
-                'theme',
-                document.body.classList.contains('dark-theme') ? 'dark' : 'light',
-            )
-    })
-}
-
-_Blog.toggleMobileMenu = function(){
-    const menuToggle = document.querySelector('.menu-toggle')
-    const mobileMenu = document.querySelector('#mobile-menu')
-    menuToggle.addEventListener('click', () => {
-        mobileMenu.classList.toggle('active')
-        menuToggle.classList.toggle('active')
-    })
-}
-
-_Blog.toggleTheme()
-_Blog.changeTitle()
-_Blog.toggleMobileMenu()
-}());
+    $(document).ready(function() {
+        _Blog.prettify()
+        _Blog.changeTitle()
+        _Blog.toggleTheme()
+        _Blog.toggleMobileMenu()
+    });
+});
