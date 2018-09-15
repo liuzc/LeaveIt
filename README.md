@@ -72,16 +72,23 @@ into `/static`. They’re easily created via https://realfavicongenerator.net/.
 Customize browserconfig.xml and site.webmanifest to set theme-color and background-color for example.
 
 # Tips
+
+#### Set production environment when generating site
+
 Because some functions are only in production mode, So you **need to add a production** environment variables when generating your site.
 ```bash
 HUGO_ENV=production hugo --gc --minify
 ```
 
+#### Hugo “extended” Sass/SCSS version required
+
+This theme write style with scss, So you must download and install the “extended” Sass/SCSS version
+
 # Questions, ideas, bugs, pull requests?
 All feedback is welcome! Head over to the [issue tracker](https://github.com/liuzc/LeaveIt/issues).
 
 # License
-Kiss is licensed under the MIT license. Check the LICENSE file for details.
+LeaveIt is licensed under the MIT license. Check the LICENSE file for details.
 The following resources are included in the theme:
 
 * lazysizes - https://github.com/aFarkas/lazysizes
