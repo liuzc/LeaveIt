@@ -84,6 +84,27 @@ HUGO_ENV=production hugo --gc --minify
 
 This theme write style with scss, So you must download and install the “extended” Sass/SCSS version
 
+
+# Home Post model
+If you want to show posts on index instead of a personal profile, just open config.toml in the base of the Hugo site, add the following line to config.toml
+```toml
+[params]
+ home_mode = "post" # post or other
+```
+
+### Displaying Featured Image
+
+```toml
+---
+date: 2018-08-29
+title: "This One Goes to 11!"
+description: "With Go 1.11, Hugo finally gets support for variable overwrites in templates!"
+categories: ["Releases"]
+featured_image: https://raw.githubusercontent.com/gohugoio/hugoDocs/master/content/en/news/0.48-relnotes/featured-hugo-48-poster.png
+---
+```
+![hugo-theme-LeaveIt-Host_post](https://raw.githubusercontent.com/liuzc/LeaveIt/master/images/home_post_mode.jpg)
+
 # Questions, ideas, bugs, pull requests?
 All feedback is welcome! Head over to the [issue tracker](https://github.com/liuzc/LeaveIt/issues).
 
