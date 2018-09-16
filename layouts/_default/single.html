@@ -68,33 +68,22 @@
             {{ end }}
     </div>
 
-     {{ with .Params.tags }}
+  
     <div class="post-tags">
-        <section style="float:left;">
-        <i class="iconfont icon-tag"></i>Tag(s): 
-        {{ range . }}
-        <span class="tag"><a href="{{ "tags/" | absURL }}{{ . | urlize }}/">
-                #{{.}}</a></span>
-        {{ end }}
-        </section>
-        <section style="float:right;">
-                <a href="javascript:window.history.back();">back</a></span> · 
-                <span><a href="{{ "/" | absURL}}">home</a></span>
-        </section>
-    </div>
-    {{ end }}
-
-
-    <div class="post-comment">
-        {{ if ne .Site.DisqusShortname "" }}
-            {{ if ( .Params.showComments | default true ) }}
-             {{ template "_internal/disqus.html" . }}
+        {{ with .Params.tags }}
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            {{ range . }}
+            <span class="tag"><a href="{{ "tags/" | absURL }}{{ . | urlize }}/">
+                    #{{.}}</a></span>
             {{ end }}
-        {{ else }}
-
+            </section>
         {{ end }}
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="{{ .Site.BaseURL }}">home</a></span>
+        </section>
     </div>
-
 
     <div class="post-nav">
         {{ if .PrevInSection }}
@@ -103,6 +92,16 @@
         {{ if .NextInSection }}
         <a href="{{.NextInSection.Permalink}}" class="next" rel="next" title="{{.NextInSection.Title}}">{{.NextInSection.Title}}&nbsp;<i class="iconfont icon-right"></i></a>
         {{ end }}
+    </div>
+
+    <div class="post-comment">
+          {{ if ( .Params.showComments | default true ) }}
+                 {{ if ne .Site.DisqusShortname "" }}
+                     {{ template "_internal/disqus.html" . }}
+                 {{ else }}
+                    {{ partial "gitalk.html" . }}
+                 {{ end }}
+          {{ end }}
     </div>
 </article>
 {{- end }}
