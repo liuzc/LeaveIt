@@ -84,6 +84,9 @@ HUGO_ENV=production hugo --gc --minify
 
 This theme write style with scss, So you must download and install the “extended” Sass/SCSS version
 
+#### How to toggle dark-light mode
+* You can click the love heart ❤️ in front of your blog title to toggle dark-light mode. I don't think it's a good interaction design. But I don't have a good idea.
+* If you want to make your own theme toggle-able element, you can create an element with a class `.theme-switch`. See [here](https://github.com/liuzc/LeaveIt/blob/4e8672ebbc636ba1d0e96573d25739a5295d879b/assets/js/main.js#L32)
 
 # Home Post model
 If you want to show posts on index instead of a personal profile, just open config.toml in the base of the Hugo site, add the following line to config.toml
