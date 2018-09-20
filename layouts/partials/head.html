@@ -38,7 +38,7 @@
 {{ $cdn_url := ""}}
   {{ if eq ( getenv "HUGO_ENV" ) "production" }}
           {{ with .Site.Params.cdn_url }}
-              {{ $cdn_url = .}}
+              {{ $cdn_url := .}}
            {{ end }}   
   {{ end  }}
 {{ .Scratch.Set "cdn_url" $cdn_url }}
