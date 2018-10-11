@@ -67,7 +67,11 @@
             {{ with .Permalink }}
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href={{ . }}>{{ . }}</span>
+                    <a href={{ . }}>
+                        <script>
+                            document.write(decodeURI(location))
+                        </script>
+                    </a>
             </p>
             {{ end }}
             {{ with .Site.Params.license }}
