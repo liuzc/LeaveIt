@@ -69,7 +69,7 @@
                     <span>Link:</span>
                     <a href={{ . }}>
                         <script>
-                            document.write(decodeURI(location))
+                            document.write(decodeURI(location.origin + location.pathname))
                         </script>
                     </a>
             </p>
