@@ -1,5 +1,5 @@
 {{ if and .IsPage (ne .Params.comment false) }}
-<div class="comments-container">
+<div class="post-comment">
   {{- if and .Site.Params.disqus.name .Site.Params.disqus.lazy -}}
     <div onclick="showDisqus();" id="disqus_title" class="disqus_title">显示 Disqus 评论</div>
   {{- end -}}
@@ -17,7 +17,7 @@
         clientSecret: '{{ .Site.Params.gitalk.clientSecret }}',
         repo: '{{ .Site.Params.gitalk.repo }}',
         owner: '{{ .Site.Params.gitalk.owner }}',
-        admin: ['{{ .Site.Params.gitalk.owner }}'],
+        admin: ['{{ .Site.Params.gitalk.admin }}'],
         body: decodeURI(location.href)
       });
       gitalk.render('gitalk-container');
