@@ -20,8 +20,17 @@
                         {{ end }}
                 </span>
                 {{- end }}
+
+                |
+                <a href="#gitalk-container" itemprop="discussionUrl">
+                    <span class="post-comments-count gitalk-comment-count" itemprop="commentCount"></span>
+                </a>
+                {{ .Site.Params.gitalk.countSign }}
         </div>
     </header>
+
+        {{ partial "toc.html" . }}
+
     <div class="post-content">
         <!--featured_image-->
 
@@ -95,11 +104,7 @@
     </div>
 
     <div class="post-comment">
-          {{ if ( .Params.showComments | default true ) }}
-                 {{ if ne .Site.DisqusShortname "" }}
-                     {{ template "_internal/disqus.html" . }}
-                 {{ end }}
-          {{ end }}
+
     </div>
 </article>
 {{- end }}

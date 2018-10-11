@@ -2,3 +2,95 @@
 // Custom style
 // ==============================
 // You can override the variables in _variables.scss to customize the style
+
+.comments-container {
+    position: relative;
+    width: 100%;
+    max-width: 780px;
+    margin: 0 auto;
+    padding-top: 2rem;
+}
+
+.disqus_title {
+    display: inline-block;
+    padding: 0 15px;
+    color: #0a9caf;
+    border: 1px solid #0a9caf;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    /* float: left; */
+    margin-top: 20px;
+}
+
+.disqus_title:hover {
+    color: #fff;
+    background: #0a9caf;
+}
+
+.gitalk-container {
+    margin: 20px 0;
+    border-bottom: 1px solid #e9e9e9;
+}
+
+.post-toc {
+    position: absolute;
+    width: 200px;
+    margin-left: 780px;
+    padding: 10px;
+    word-wrap: break-word;
+    box-sizing: border-box;
+
+    .post-toc-title {
+        margin: 0;
+        font-weight: 400;
+        text-transform: uppercase;
+    }
+
+    .post-toc-content {
+        &.always-active ul {
+            display: block;
+        }
+
+        >nav>ul {
+            margin: 10px 0;
+        }
+
+        ul {
+            padding-left: 0;
+            list-style: none;
+
+            ul {
+            padding-left: 15px;
+            display: none;
+            }
+
+            .has-active > ul {
+                display: block;
+            }
+        }
+    }
+
+    a:hover {
+        color: #c05b4d;
+        -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+
+    a {
+        display: block;
+        line-height: 30px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        -webkit-transition-duration: .2s;
+        transition-duration: .2s;
+        -webkit-transition-property: -webkit-transform;
+        transition-property: -webkit-transform;
+        transition-property: transform;
+        transition-property: transform,-webkit-transform;
+        -webkit-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
+    }
+}
