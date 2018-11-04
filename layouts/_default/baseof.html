@@ -7,6 +7,7 @@
     	 <main class="main">
           <div class="container">
       		{{ block "content" . }}{{ end }}
+          {{ partial "comments.html" . }}
           </div>
 		   </main>
       {{ partial "footer.html" . }}

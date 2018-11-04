@@ -1,0 +1,59 @@
+{{ if and .IsPage (ne .Params.comment false) }}
+<div class="post-comment">
+  {{- if and .Site.Params.disqus.name .Site.Params.disqus.lazy -}}
+    <div onclick="showDisqus();" id="disqus_title" class="disqus_title">显示 Disqus 评论</div>
+  {{- end -}}
+
+  <!-- gitalk -->
+  {{- if .Site.Params.gitalk.owner -}}
+    <div id="gitalk-container" class="gitalk-container"></div>
+    <link rel="stylesheet" href="{{ "lib/gitalk/gitalk-1.2.2.min.css" | relURL }}">
+    <script src="{{ "lib/gitalk/gitalk-1.2.2.min.js" | relURL }}"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '{{md5 .URL}}',
+        title: '{{ .Title }}',
+        clientID: '{{ .Site.Params.gitalk.clientId }}',
+        clientSecret: '{{ .Site.Params.gitalk.clientSecret }}',
+        repo: '{{ .Site.Params.gitalk.repo }}',
+        owner: '{{ .Site.Params.gitalk.owner }}',
+        admin: ['{{ .Site.Params.gitalk.admin }}'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the
+      <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a>
+    </noscript>
+  {{- end -}}
+
+  <!-- Disqus -->
+  {{- if .Site.Params.disqus.name -}}
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    function showDisqus() {
+      // $("#disqus_title").attr("style", "display:none");
+
+      // Don't ever inject Disqus on localhost--it creates unwanted
+      // discussions from 'localhost:1313' on your Disqus account...
+      // if (window.location.hostname === 'localhost') return;
+      // setTimeout("checkDisqus()", 20000);
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = false;
+      var disqus_shortname = '{{ .Site.Params.disqus.name }}';
+      dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      window.location.hash = "#disqus_thread";
+    }
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+    {{- if not .Site.Params.disqus.lazy -}}
+      <script type="text/javascript">
+          showDisqus();
+      </script>
+    {{- end -}}
+  {{- end -}}
+</div>
+{{- end }}
