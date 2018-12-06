@@ -19,16 +19,6 @@ jQuery(function($) {
 
     }
 
-    _Blog.changeTitle = function() {
-        var currentTitle = document.title;
-        window.onblur = function() {
-            document.title = 'I miss you!（＞﹏＜）';
-        }
-        window.onfocus = function() {
-            document.title = currentTitle;
-        }
-    };
-
     _Blog.toggleTheme = function() {
         const currentTheme = window.localStorage && window.localStorage.getItem('theme')
         const isDark = currentTheme === 'dark'
@@ -49,7 +39,6 @@ jQuery(function($) {
 
     $(document).ready(function() {
         _Blog.prettify()
-        _Blog.changeTitle()
         _Blog.toggleTheme()
         _Blog.toggleMobileMenu()
     });
