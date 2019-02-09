@@ -2,7 +2,13 @@
     {{ $cdn_url := .Scratch.Get "cdn_url" }}
     {{ with .Site.Params.avatar}}
     {{ $avatar := .}}
-    <div class="avatar">
+    <div class="avatar light">
+        <a href="/posts/"> <img src="{{ (printf "%s%s" $cdn_url $avatar)}}"> </a>
+    </div>
+    {{ end }}
+    {{ with .Site.Params.avatar_dark}}
+    {{ $avatar := .}}
+    <div class="avatar dark">
         <a href="/posts/"> <img src="{{ (printf "%s%s" $cdn_url $avatar)}}"> </a>
     </div>
     {{ end }}

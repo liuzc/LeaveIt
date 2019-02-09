@@ -43,6 +43,7 @@ preserveTaxonomyNames = true
     since = 2011
     author = "Covey.Liu"                           # Author's name
     avatar = "/images/me/avatar.jpeg"           # Author's avatar
+    avatar_dark = "/images/me/avatar_dark.jpeg" # Optional dark theme avatar
     subtitle = "我会更好，因为我没有停止"         # Subtitle
     cdn_url = ""           # Base CDN URL
     home_mode = "" # post or other
