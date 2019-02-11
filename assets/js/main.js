@@ -32,9 +32,22 @@ jQuery(function($) {
     _Blog.toggleTheme = function() {
         const currentTheme = window.localStorage && window.localStorage.getItem('theme')
         const isDark = currentTheme === 'dark'
+        var toggleVisibility = function(getDark) {
+            if (getDark) {
+                $('.dark').show()
+                $('.light').hide()
+            } else {
+                $('.dark').hide()
+                $('.light').show()
+            }
+        }
+        toggleVisibility(isDark)
         $('body').toggleClass('dark-theme', isDark)
         $('.theme-switch').on('click', () => {
             $('body').toggleClass('dark-theme')
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme')
+            const isDark = currentTheme === 'dark'
+            toggleVisibility(!isDark)
             window.localStorage &&
                 window.localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light', )
         })
