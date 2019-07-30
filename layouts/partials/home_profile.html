@@ -6,7 +6,7 @@
         <a href="/posts/"> <img src="{{ (printf "%s%s" $cdn_url $avatar)}}"> </a>
     </div>
     {{ end }}
-    {{ with .Site.Params.subtitle}}
+    {{ with .Site.Params.subtitle | emojify}}
     <h2 class="description">
        {{ . }}
     </h2>
