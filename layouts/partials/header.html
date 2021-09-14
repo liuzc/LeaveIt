@@ -1,22 +1,26 @@
 <nav class="navbar">
     <div class="container">
         <div class="navbar-header header-logo">
-        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+            <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
         </div>
         <div class="menu navbar-right">
                 {{ $currentPage := . }}
                 {{ range .Site.Menus.main }}
                 <a class="menu-item{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
                 {{ end }}
+                <a href="javascript:void(0);" class="theme-switch"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.33759 4.11519C5.33759 3.12159 5.57439 2.19039 5.97759 1.35039C6.10879 1.07519 5.99679 0.929591 5.71039 1.03519C2.9648 2.05759 1.0016 4.67519 1.0016 7.77439C1.0016 11.7632 4.23519 14.9984 8.22558 14.9984C11.3248 14.9984 13.944 13.0352 14.9664 10.2928C15.0736 10.0064 14.9264 9.89439 14.6512 10.0256C13.8096 10.4272 12.8784 10.664 11.8848 10.664C8.26718 10.6624 5.33759 7.73119 5.33759 4.11519Z" fill="black"/></svg></a>
         </div>
     </div>
 </nav>
 <nav class="navbar-mobile" id="nav-mobile" style="display: none">
      <div class="container">
         <div class="navbar-header">
-            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="{{.Site.BaseURL}}">{{ .Site.Title }}</a></div>
-            <div class="menu-toggle">
-                <span></span><span></span><span></span>
+            <div><a href="{{.Site.BaseURL}}">{{ .Site.Title }}</a></div>
+            <div class="menu-toggle-container">
+                <a href="javascript:void(0);" class="theme-switch"><svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.1953 9.45004C11.1953 8.03038 11.5336 6.69988 12.1097 5.49968C12.2972 5.10647 12.1371 4.89844 11.7279 5.04932C7.80502 6.51013 5 10.2502 5 14.6783C5 20.3775 9.62017 25 15.3217 25C19.7498 25 23.4921 22.195 24.9529 18.2766C25.1061 17.8674 24.8958 17.7074 24.5026 17.8948C23.3001 18.4687 21.9696 18.807 20.5499 18.807C15.3811 18.8047 11.1953 14.6166 11.1953 9.45004Z" fill="black"/></svg></a>
+                <div class="menu-toggle">
+                    <span></span><span></span><span></span>
+                </div>
             </div>
         </div>
      
